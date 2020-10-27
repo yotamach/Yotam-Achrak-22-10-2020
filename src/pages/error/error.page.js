@@ -14,7 +14,7 @@ class ErrorPage extends Component {
   render() {
     const {error} = this.props;
     return (
-      <Header as='h2' icon>
+      <Header as='h2' icon className="error">
         <Icon name='hand paper outline'/>
         Error
         <Header.Subheader>

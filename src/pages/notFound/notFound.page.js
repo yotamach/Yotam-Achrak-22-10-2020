@@ -6,9 +6,9 @@ import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon';
 class NotFoundPage extends Component {
   render() {
     return (
-      <Header as='h2' icon>
+      <Header as='h2' icon className="not-found">
         <Icon name='hand paper outline'/>
-        Error
+        404
         <Header.Subheader>
           Page not found
         </Header.Subheader>

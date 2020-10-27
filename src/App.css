@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.main-view{
+.main-view, .error, .not-found{
   text-align: center;
 }
 
