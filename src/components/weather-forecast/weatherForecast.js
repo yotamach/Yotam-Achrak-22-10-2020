@@ -3,9 +3,6 @@ import {Card, Image} from 'semantic-ui-react'
 import * as moment from 'moment';
 import {toCelsius, getImageUrl} from '../../utils/utils';
 export default class WeatherForecast extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   getForecast = (fiveDaysArray) => {
     const {DailyForecasts = []} = fiveDaysArray;

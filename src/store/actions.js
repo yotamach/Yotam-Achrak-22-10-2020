@@ -1,12 +1,9 @@
 import {actions} from './action.types';
-import * as React from 'react';
 import {getErrorSelector, getSelectedLocationSelector, getLocationsFromSearchSelector, getFavoriteLocationsSelector} from './selectors';
 import store from './index';
 import * as axios from 'axios';
-import { withRouter } from 'react-router';
 
 const apiKey = 'G7jGe34MT3Snsc1OD4hVt343I8RKcebB';
-const state = store.getState();
 const {dispatch} = store;
 
 const getError = (state) => {
@@ -56,7 +53,7 @@ const searchLocations = (text) => {
       dispatch({
         type: actions.SET_ERROR,
         payload: {
-          error: err
+          error: "Error in server"
         }
       }));
 }
@@ -72,7 +69,7 @@ const get5DaysWeatherByCity = (cityCode) => {
     .catch(err => dispatch({
       type: actions.SET_ERROR,
       payload: {
-        error: err
+        error: "Error in server"
       }
     }));
 }
@@ -88,7 +85,7 @@ const getWeatherByCity = (cityCode) => {
     .catch(err => dispatch({
       type: actions.SET_ERROR,
       payload: {
-        error: err
+        error: "Error in server"
       }
     }));
 }

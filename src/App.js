@@ -10,6 +10,7 @@ import AppFooter from './components/footer/footer';
 import {Container} from 'semantic-ui-react';
 import store from './store/index';
 import ErrorPage from './pages/error/error.page';
+import NotFoundPage from './pages/notFound/notFound.page';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
                 <Route key="error" exact path="/error">
                   <ErrorPage />
                 </Route>
+                <Route path='*' exact component={NotFoundPage} />
               </Switch>
             </Container>
             <AppFooter/>
