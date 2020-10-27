@@ -82,11 +82,11 @@ class WeatherPage extends Component {
       selectedLocation,
       getFavoriteLocations,
       addToFavoritesList,
-      getError,
+      error,
       removeFromFavoritesList
     } = this.props;
-    console.log('error: ',getError);
-    return (!getError ?
+    console.log('error: ',error);
+    return (!error ?
      <div>
         <SearchLocation
           searchLocations={searchLocations}

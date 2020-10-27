@@ -39,7 +39,7 @@ const removeFromFavorites = (cityCode) => {
 }
 
 const searchLocations = (text) => {
-  axios(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${text}`)
+  axios(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${apiKey}&q=${text}`)
     .then(resp => dispatch({
     type: actions.SEARCH_LOCATION,
     payload: {
@@ -59,7 +59,7 @@ const searchLocations = (text) => {
 }
 
 const get5DaysWeatherByCity = (cityCode) => {
-  axios(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=${apiKey}`)
+  axios(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=${apiKey}`)
     .then(resp => dispatch({
     type: actions.GET_FORECAST,
     payload: {
@@ -75,7 +75,7 @@ const get5DaysWeatherByCity = (cityCode) => {
 }
 
 const getWeatherByCity = (cityCode) => {
-  axios(`http://dataservice.accuweather.com/currentconditions/v1/${cityCode}?apikey=${apiKey}`)
+  axios(`https://dataservice.accuweather.com/currentconditions/v1/${cityCode}?apikey=${apiKey}`)
     .then(resp => dispatch({
     type: actions.SELECT_LOCATION,
     payload: {

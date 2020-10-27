@@ -8,8 +8,8 @@
   width: 100%;
 }
 
-.main-view, .error, .not-found{
-  text-align: center;
+.main-view, .ui.container{
+  text-align: center !important;
 }
 
 .forecast{
