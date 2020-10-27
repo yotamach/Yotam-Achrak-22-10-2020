@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'semantic-ui-css/semantic.min.css'
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import menuItems from './config/menu';
+import {Provider} from 'react-redux';
+
+import AppHeader from './components/header/header';
+import AppFooter from './components/footer/footer';
+import {Container} from 'semantic-ui-react';
+import store from './store/index';
+import ErrorPage from './pages/error/error.page';
 
 function App() {
+
+  const getReutes = () => {
+    return menuItems.map(item => <Route key={item.name} exact path={item.path}>
+      {item.component}
+    </Route>);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      < Provider store={store}>
+        <div className="App">
+          <Router>
+            <AppHeader title={"Weather dashnoard"} initialItem={"weather"}/>
+            <Container>
+              <Switch>
+                {getReutes()}
+                <Route key="error" exact path="/error">
+                  <ErrorPage />
+                </Route>
+              </Switch>
+            </Container>
+            <AppFooter/>
+          </Router>
+        </div>
+      </Provider>
   );
 }
 
